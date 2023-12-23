@@ -1,2 +1,2 @@
 # SQ_media_produtividade_servico
-A consulta utiliza uma abordagem analítica para calcular a média de volume por serviço ao longo dos últimos dois anos para clientes matriz.
+A consulta utiliza uma abordagem analítica para calcular a média de volume por serviço ao longo dos últimos dois anos para clientes matriz. A análise destaca a média de volume por serviço, possibilitando uma compreensão detalhada das tendências ao longo do tempo. A ordenação criteriosa por Cliente Matriz, Ano de Lançamento e Média de Volume proporciona uma visualização clara, facilitando a identificação de padrões e insights valiosos para otimização estratégica.

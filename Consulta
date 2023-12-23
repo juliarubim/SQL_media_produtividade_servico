@@ -1,0 +1,26 @@
+WITH Vol_Servico AS (
+    SELECT
+        c.C_Matriz,
+        sv.Servico,
+        YEAR(l.Dt_lancamento) AS AnoLancamento,
+        AVG(l.Volume) AS Med_Vol_Servico
+    FROM
+        Clientes c
+    JOIN
+        Lancamento l ON c.IDCliente = l.IDCliente
+    JOIN
+        Servico sv ON l.IDServico = sv.IDServico
+    WHERE
+        l.Dt_lancamento >= DATEADD(YEAR, -2, GETDATE())
+    GROUP BY
+        c.C_Matriz, sv.Servico, YEAR(l.Data)
+)
+SELECT
+    C_Matriz,
+    Servico,
+    AnoLancamento,
+    COALESCE(Med_Vol_Servico, 0) AS Med_Vol_Servico
+FROM
+    Vol_Servico
+ORDER BY
+    C_Matriz, AnoLancamento DESC, Med_Vol_Servico DESC;
